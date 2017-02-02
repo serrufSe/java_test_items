@@ -25,6 +25,7 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
     compile group: 'commons-cli', name: 'commons-cli', version: '1.2'
+    compile 'com.google.guava:guava:21.0'
 }
 
 fatJar {
