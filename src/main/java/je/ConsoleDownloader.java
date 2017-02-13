@@ -12,6 +12,7 @@ import java.nio.file.Paths;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 
 class Report {
@@ -99,6 +100,10 @@ class Downloader {
                         }
                     });
                 });
+
+        service.shutdown();
+        service.awaitTermination(2, TimeUnit.HOURS);
+
         return report;
     }
 
